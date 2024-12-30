@@ -58,7 +58,7 @@ The only hard requirement here, is the index.html. Any players should assume thi
 ## Examples
 
 ### Music
-* [Audio Player](Examples\audio-album\index.html)
+* [Audio Player](Examples/audio-album/index.html)
 
 ### Drawing/Painting
 * Link your work here!
