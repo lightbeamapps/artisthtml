@@ -18,7 +18,7 @@ Artists can create local-first web-pages as a home for their music, their visual
 
 Artists can hand-craft these sites, or use one of the generators available: 
 
-* **`Your generator site here!**  Send a PR with code, or a link to add to this file!
+* **Your generator site here!**  Send a PR with code, or a link to add to this file!
 
 --------
 ## Defining a standard
@@ -58,7 +58,7 @@ The only hard requirement here, is the index.html. Any players should assume thi
 ## Examples
 
 ### Music
-* Link your work here!
+* [Audio Player](Examples\audio-album\index.html)
 
 ### Drawing/Painting
 * Link your work here!

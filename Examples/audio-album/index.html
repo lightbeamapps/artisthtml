@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player with JSON Tracks</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Audio Player Example</h1>
+  <h2>An album by Dave Wood</h2>
+  <div id="trackTitle">Track Title</div>
+  <div><img id="trackImage" class="responsiveImage"></img></div>
+  <div><audio id="audioPlayer" controls autoplay>
+    <source id="audioSource" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  </div>
+  <button id="prevButton">Previous</button>
+  <button id="nextButton">Next</button>
+
+  <script>
+    const tracks = [
+      { title: "01 - Jazz", filename: "audio/1.mp3", artwork: "img/1.jpg"},
+      { title: "02 - Unsettled", filename: "audio/2.mp3", artwork: "img/2.jpg"},
+    ];
+
+    const audioPlayer = document.getElementById('audioPlayer');
+    const audioSource = document.getElementById('audioSource');
+    const trackTitle = document.getElementById('trackTitle');
+    const imageSource = document.getElementById('trackImage');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+
+    let currentTrackIndex = 0;
+
+    function updateTrack() {
+      const track = tracks[currentTrackIndex];
+      trackTitle.textContent = track.title;
+      audioSource.src = track.filename;
+      imageSource.src = track.artwork;
+      audioPlayer.load();
+      audioPlayer.play();
+    }
+
+    prevButton.addEventListener('click', () => {
+      currentTrackIndex = currentTrackIndex === 0 ? tracks.length - 1 : currentTrackIndex - 1;
+      updateTrack();
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentTrackIndex = currentTrackIndex === tracks.length - 1 ? 0 : currentTrackIndex + 1;
+      updateTrack();
+    });
+
+    // Initialize the player with the first track
+    updateTrack();
+  </script>
+</body>
+</html>
+
